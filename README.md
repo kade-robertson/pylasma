@@ -29,4 +29,6 @@ These are the builtin commands you can use in the axiom, or any replacement.
 
 # Example
 
-Check out the `linden-test.lasm` file for an example.
+Check out the `linden-test.lasm` file for an example. It should produce something like this:
+
+![Example](http://i.imgur.com/aWsKfS3.png)
