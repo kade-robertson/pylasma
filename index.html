@@ -19,7 +19,74 @@
     </section>
 
     <section class="main-content">
-      <p>Created for <a href="http://meta.codegolf.stackexchange.com/a/5558/38417">this PPCG question</a>. A full spec of how LindenMASM works can be seen on that link.</p>
+      <h1>
+<a id="syntax" class="anchor" href="#syntax" aria-hidden="true"><span class="octicon octicon-link"></span></a>Syntax</h1>
+
+<p>There are only a few keywords available in LindenMASM which you will need to implement.</p>
+
+<ol>
+<li>
+<code>STT</code> - Begins every LindenMASM file.</li>
+<li>
+<code>AXI $</code> - Sets the axiom (initial state) of the system.
+
+<ul>
+<li>
+<code>$</code> is a series of commands/variables/constants, ranging from the built-ins plus any user-defined functions.</li>
+</ul>
+</li>
+<li>
+<code>DEG $</code> - Sets the degree of which all turns will follow, default is 90.</li>
+<li>
+<code>MOV $</code> - Sets the move distance of which all position adjustments will follow, default is 10.</li>
+<li>
+<code>INC $</code> - Sets the number of iterations the generation should go through, default is 0.</li>
+<li>
+<code>SET $ #</code> - Sets a constant <code>$</code> to a specified command <code>#</code>
+
+<ul>
+<li>
+<code>$</code> should be a character that is not one of <code>[]+-</code>.</li>
+<li>
+<code>#</code> will either be a 0 or a 1, where a 0 corresponds to the constant being one that draws forward, and a 1 corresponds to the constant being one that moves fowards.</li>
+</ul>
+</li>
+<li>
+<code>RPL $ #</code> - On every iteration, variable/constant <code>$</code> will be replaced with the command/variable/constant string <code>#</code>.
+
+<ul>
+<li>
+<code>$</code> should be a character that is not one of <code>[]+-</code>. It does not need to be <code>SET</code> to be replaced.</li>
+<li>
+<code>#</code> is a string of commands/variables/constants that <code>$</code> should be replaced with.</li>
+</ul>
+</li>
+<li>
+<code>END</code> - Ends every LindenMASM file.</li>
+</ol>
+
+<p>Each keyword should be placed on a new line. Every file should start with <code>STT</code> and end with <code>END</code>.</p>
+
+<h1>
+<a id="commands" class="anchor" href="#commands" aria-hidden="true"><span class="octicon octicon-link"></span></a>Commands</h1>
+
+<p>These are the builtin commands you can use in the axiom, or any replacement.</p>
+
+<ol>
+<li>
+<code>+</code> - Rotates the pointer to the right <code>DEG</code> degrees.</li>
+<li>
+<code>-</code> - Rotates the pointer to the left <code>DEG</code> degrees.</li>
+<li>
+<code>[</code> - Saves the pointer's coordinates and heading to a list.</li>
+<li>
+<code>]</code> - Pops the last value of a list and sets the pointer's coordinates and heading to that.</li>
+</ol>
+
+<h1>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example</h1>
+
+<p>Check out the <code>linden-test.lasm</code> file for an example.</p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/kade-robertson/pylasma">pylasma</a> is maintained by <a href="https://github.com/kade-robertson">kade-robertson</a>.</span>
