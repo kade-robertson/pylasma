@@ -1,6 +1,6 @@
 # Syntax
 
-There are only a few keywords available in LindenMASM which you will need to implement.
+There are only a few keywords available in LindenMASM.
 
 1. `STT` - Begins every LindenMASM file.
 2. `AXI $` - Sets the axiom (initial state) of the system.
