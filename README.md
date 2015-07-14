@@ -12,7 +12,7 @@ There are only a few keywords available in LindenMASM which you will need to imp
  * `$` should be a character that is not one of `[]+-`.
  * `#` will either be a 0 or a 1, where a 0 corresponds to the constant being one that draws forward, and a 1 corresponds to the constant being one that moves fowards.
 7. `RPL $ #` - On every iteration, variable/constant `$` will be replaced with the command/variable/constant string `#`.
- * `$` will be a letter between A and Z, inclusive, and uppercase. It does not need to be `SET` to be replaced.
+ * `$` should be a character that is not one of `[]+-`. It does not need to be `SET` to be replaced.
  * `#` is a string of commands/variables/constants that `$` should be replaced with.
 8. `END` - Ends every LindenMASM file.
 
