@@ -1,0 +1,9 @@
+STT
+AXI X
+DEG 25
+MOV 2
+INC 6
+SET F 0
+RPL X F-[[X]+X]+F[+FX]-X
+RPL F FF
+END
